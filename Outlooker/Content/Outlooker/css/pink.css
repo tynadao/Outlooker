@@ -1,0 +1,68 @@
+﻿/* Red Color */
+
+a, a:visited{
+color:#6C003D;
+text-decoration:none;
+}
+
+a:hover{
+color:#6C003D;
+text-decoration:underline;
+}
+
+.fixedbar{
+background:#6C003D;
+}
+
+.ddsubmenustyle, .ddsubmenustyle div{
+border:1px solid #52002F !important;
+}
+
+.ddsubmenustyle li a{
+background:#6C003D !important;
+border-bottom:1px solid #52002F !important;
+}
+
+.ddsubmenustyle li a:hover{
+background:#52002F !important;
+}
+
+.mattblackmenu ul{
+background:#6C003D !important;
+}
+
+.mattblackmenu li a{
+background:#6C003D !important;
+}
+
+.mattblackmenu li a:hover{
+background:#52002F !important;
+}
+
+.main blockquote{
+background:url('../img/quote-red.png') top left no-repeat;
+}
+
+.entry li i { color: #6C003D; }
+
+.posts .entry h2{
+background:#6C003D;
+}
+
+.default-header hr{ border-top: 5px solid #6C003D; }
+
+.service-item h3,
+.features-item h4{ color:#6C003D; }
+
+
+.foot{
+background:#6C003D;
+}
+
+.foot a, .foot a:visited{
+color:#ffc2c2;
+}
+
+.foot a:hover{
+color:#ffc2c2;
+}
