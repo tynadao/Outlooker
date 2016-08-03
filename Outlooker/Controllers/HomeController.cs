@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Outlooker.Controllers
-{//
+{
     public class HomeController : Controller
     {
         //using mail service
