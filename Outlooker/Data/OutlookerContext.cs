@@ -11,7 +11,10 @@ namespace Outlooker.Data
     {
         public OutlookerContext() : base("DefaultConnection")
         {
+            this.Configuration.LazyLoadingEnabled = false; //be careful of this and understand before implementing
+            this.Configuration.ProxyCreationEnabled = false;
 
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<OutlookerContext, OutlookerMigrationsConfiguration>());
         }
 
         public DbSet<Topic> Topics { get; set; }

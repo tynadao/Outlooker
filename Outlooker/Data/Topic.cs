@@ -11,7 +11,7 @@ namespace Outlooker.Data
         public string Title { get; set; }
         public string Body { get; set; }
         public DateTime Created { get; set; }
-        //public bool Flagged { get; set; } //demo Code First Migrations
+        public bool Flagged { get; set; } //demo Code First Migrations
 
         public ICollection<Reply> Replies { get; set; }
     }

@@ -11,7 +11,7 @@ namespace Outlooker.Data
         public OutlookerMigrationsConfiguration()
         {
 #if DEBUG
-            this.AutomaticMigrationDataLossAllowed = true; //danger in setting this value. Need to do research first before trying it to actual website
+            this.AutomaticMigrationDataLossAllowed = true; //danger in setting this value. Need to do research first before trying it to actual website. often only set for staging and development
 #endif
             this.AutomaticMigrationsEnabled = true;
         }
