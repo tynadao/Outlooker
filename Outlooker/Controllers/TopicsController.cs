@@ -23,5 +23,20 @@ namespace Outlooker.Controllers
 
             return topics;
         }
+
+        public HttpResponseMessage Post([FromBody]Topic newTopic)
+        {
+            if(newTopic.Created == default(DateTime))
+            {
+                newTopic.Created = DateTime.UtcNow;
+            }
+
+            if(_repo.AddTopic(newTopic) && _repo.Save())
+            {
+                return Request.CreateResponse(HttpStatusCode.Created, newTopic);
+            }
+
+            return Request.CreateResponse(HttpStatusCode.BadRequest);
+        }
     }
 }
