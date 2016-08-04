@@ -9,6 +9,7 @@ namespace Outlooker.Data
     public interface IOutlookerRepository
     {
         IQueryable<Topic> GetTopics();
+        IQueryable<Topic> GetTopicsIncludingReplies();
         IQueryable<Reply> GetRepliesByTopic(int topicId);
 
         bool Save();

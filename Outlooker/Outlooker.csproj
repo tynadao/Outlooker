@@ -210,6 +210,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RepliesController.cs" />
     <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Data\IOutlookerRepository.cs" />
     <Compile Include="Data\OutlookerContext.cs" />

@@ -19,7 +19,7 @@ namespace Outlooker.Controllers
 
         public IEnumerable<Topic> Get()
         {
-            var topics = _repo.GetTopics().OrderByDescending(t => t.Created).Take(25).ToList();
+            var topics = _repo.GetTopicsIncludingReplies().OrderByDescending(t => t.Created).Take(25).ToList();
 
             return topics;
         }
