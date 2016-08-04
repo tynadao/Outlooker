@@ -52,5 +52,19 @@ namespace Outlooker.Data
                 return false;
             }
         }
+
+        public bool AddReply(Reply newReply)
+        {
+            try
+            {
+                _ctx.Replies.Add(newReply);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //TODO log this error
+                return false;
+            }
+        }
     }
 }

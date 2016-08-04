@@ -13,7 +13,7 @@ namespace Outlooker.Data
         IQueryable<Reply> GetRepliesByTopic(int topicId);
 
         bool Save();
-
         bool AddTopic(Topic newTopic);
+        bool AddReply(Reply newReply);
     }
 }
