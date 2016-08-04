@@ -17,9 +17,20 @@ namespace Outlooker.Controllers
             _repo = repo;
         }
 
-        public IEnumerable<Topic> Get()
+        public IEnumerable<Topic> Get(bool includeReplies = false)
         {
-            var topics = _repo.GetTopicsIncludingReplies().OrderByDescending(t => t.Created).Take(25).ToList();
+            IQueryable<Topic> results;
+
+            if(includeReplies == true)
+            {
+                results = _repo.GetTopicsIncludingReplies();
+            }
+            else
+            {
+                results = _repo.GetTopics();
+            }
+
+            var topics = results.OrderByDescending(t => t.Created).Take(25).ToList();
 
             return topics;
         }
