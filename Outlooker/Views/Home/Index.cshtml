@@ -12,7 +12,13 @@
         <div class="message-header">
             <h1>Message Board</h1>
             <p class="lead">Latest Messages...</p>
-            <div>Message Count: <span data-ng-bind="dataCount"></span></div>
+            <div>Message Count: <span data-ng-bind="data.length"></span></div>
+        </div>
+
+        <div class="progress" data-ng-show="isBusy">
+            <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                @*<span class="sr-only">20% Complete</span>*@
+            </div>
         </div>
 
         <div class="messages">
@@ -21,18 +27,10 @@
                 <div class="date col-md-2" data-ng-bind="i.created"></div>
                 <div class="contents col-md-12" data-ng-bind="i.body"></div>
                 <div class="toolbar col-md-12"><button class="btn btn-primary reply-button">Reply</button></div>
-                <div class="replies col-md-12">
+                <div class="replies col-md-12" data-ng-repeat="r in i.replies">
                     <div class="reply">
-                        <div class="created pull-right">Feb 28,2013</div>
-                        <div class="content">Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</div>
-                    </div>
-                    <div class="reply">
-                        <div class="created pull-right">Feb 28,2013</div>
-                        <div class="content">Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</div>
-                    </div>
-                    <div class="reply">
-                        <div class="created pull-right">Feb 28,2013</div>
-                        <div class="content">Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</div>
+                        <div class="created pull-right" data-ng-bind="r.created"></div>
+                        <div class="content" data-ng-bind="r.body"></div>
                     </div>
                 </div>
             </div>

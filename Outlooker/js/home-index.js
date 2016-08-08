@@ -10,6 +10,7 @@ homeIndexModule = angular
     .controller('homeIndexController', function ($scope, $http) {
         $scope.dataCount = 0;
         $scope.data = [];
+        $scope.isBusy = true;
 
         $http.get("/api/v1/topics?includeReplies=true")
         .then(function (result) {
@@ -19,5 +20,8 @@ homeIndexModule = angular
         function () {
             //Error
             alert("could not load topics");
+        })
+        .then(function () {
+            $scope.isBusy = false;
         });
     });
