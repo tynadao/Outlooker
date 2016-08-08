@@ -7,23 +7,17 @@
 
 homeIndexModule = angular
     .module('HomeIndexModule', [])
-    .controller('homeIndexController', function ($scope) {
-        $scope.name = "Shawn Wildermuth";
-        $scope.data = [
-            {
-                title: "This is a message",
-                body: "I am right about this.",
-                created: "4/24/2013"
-            },
-            {
-                title: "This is a second message",
-                body: "I am right about this.",
-                created: "4/24/2013"
-            },
-            {
-                title: "This is a third message",
-                body: "I am right about this.",
-                created: "4/24/2013"
-            },
-        ];
+    .controller('homeIndexController', function ($scope, $http) {
+        $scope.dataCount = 0;
+        $scope.data = [];
+
+        $http.get("/api/v1/topics?includeReplies=true")
+        .then(function (result) {
+            //Successful
+            angular.copy(result.data, $scope.data); //for collections
+        },
+        function () {
+            //Error
+            alert("could not load topics");
+        });
     });
