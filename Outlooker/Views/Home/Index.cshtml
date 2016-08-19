@@ -24,12 +24,12 @@
         <div class="messages">
             <div class="message row" data-ng-repeat="i in data">
                 <div class="title col-md-10" data-ng-bind="i.title"></div>
-                <div class="date col-md-2" data-ng-bind="i.created"></div>
+                <div class="date col-md-2" data-ng-bind="i.created | date:'medium'"></div>
                 <div class="contents col-md-12" data-ng-bind="i.body"></div>
                 <div class="toolbar col-md-12"><button class="btn btn-primary reply-button">Reply</button></div>
                 <div class="replies col-md-12" data-ng-repeat="r in i.replies">
                     <div class="reply">
-                        <div class="created pull-right" data-ng-bind="r.created"></div>
+                        <div class="created pull-right" data-ng-bind="r.created | date:'medium'"></div>
                         <div class="content" data-ng-bind="r.body"></div>
                     </div>
                 </div>
